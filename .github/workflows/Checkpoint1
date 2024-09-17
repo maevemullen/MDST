@@ -1,0 +1,103 @@
+import numpy as np
+import pandas as pd
+import matplotlib as plt
+
+
+df = pd.read_csv('../data/states_edu.csv')
+print(df.head())
+
+PRIMARY_KEY       STATE  YEAR  ENROLL  TOTAL_REVENUE  FEDERAL_REVENUE  \
+0     1992_ALABAMA     ALABAMA  1992     NaN      2678885.0         304177.0   
+1      1992_ALASKA      ALASKA  1992     NaN      1049591.0         106780.0   
+2     1992_ARIZONA     ARIZONA  1992     NaN      3258079.0         297888.0   
+3    1992_ARKANSAS    ARKANSAS  1992     NaN      1711959.0         178571.0   
+4  1992_CALIFORNIA  CALIFORNIA  1992     NaN     26260025.0        2072470.0   
+
+   STATE_REVENUE  LOCAL_REVENUE  TOTAL_EXPENDITURE  INSTRUCTION_EXPENDITURE  \
+0      1659028.0       715680.0          2653798.0                1481703.0   
+1       720711.0       222100.0           972488.0                 498362.0   
+2      1369815.0      1590376.0          3401580.0                1435908.0   
+3       958785.0       574603.0          1743022.0                 964323.0   
+4     16546514.0      7641041.0         27138832.0               14358922.0   
+
+   ...  GRADES_4_G  GRADES_8_G  GRADES_12_G  GRADES_1_8_G  GRADES_9_12_G  \
+0  ...     57948.0     58025.0      41167.0           NaN            NaN   
+1  ...      9748.0      8789.0       6714.0           NaN            NaN   
+2  ...     55433.0     49081.0      37410.0           NaN            NaN   
+3  ...     34632.0     36011.0      27651.0           NaN            NaN   
+4  ...    418418.0    363296.0     270675.0           NaN            NaN   
+
+   GRADES_ALL_G  AVG_MATH_4_SCORE  AVG_MATH_8_SCORE  AVG_READING_4_SCORE  \
+0      731634.0             208.0             252.0                207.0   
+1      122487.0               NaN               NaN                  NaN   
+2      673477.0             215.0             265.0                209.0   
+3      441490.0             210.0             256.0                211.0   
+4     5254844.0             208.0             261.0                202.0   
+
+   AVG_READING_8_SCORE  
+0                  NaN  
+1                  NaN  
+2                  NaN  
+3                  NaN  
+4                  NaN  
+
+[5 rows x 25 columns]
+
+df.rename({
+    'GRADES_PK_G':'ENROLL_PREK',
+    'GRADES_KG_G':'ENROLL_KINDER',
+    'GRADES_4_G':'ENROLL_4',
+    'GRADES_8_G':'ENROLL_8',
+    'GRADES_12_G':'ENROLL_12',
+    'GRADES_1_8_G':'ENROLL_PRIMARY',
+    'GRADES_9_12_G':'ENROLL_HS',
+    'GRADES_ALL_G':'ENROLL_ALL',
+    'ENROLL':'ENROLL_ALL_EST'
+    },
+    axis=1,inplace=True)
+
+How many years of data are logged in our dataset?
+
+5
+Let's compare Michigan to Ohio. Which state has the higher average across all years in the test you chose?
+
+Michigan
+Find the average for your chosen test across all states in 2019
+
+103040.4
+For each state, find a maximum value for your chosen test score
+
+363296.0
+
+Feature Engineering 
+After exploring the data, you can choose to modify features that you would use to predict the performance of the students on your chosen response variable.
+
+You can also create your own features. For example, perhaps you figured that maybe a state's expenditure per student may affect their overall academic performance so you create a expenditure_per_student feature.
+
+Use this space to modify or create features.
+
+average_hours_of_sleep
+Sleep is such a big part of how one can perform
+Feature engineering justification: <BRIEFLY DESCRIBE WHY YOU MADE THE CHANGES THAT YOU DID>
+
+Visualization
+Investigate the relationship between your chosen response variable and at least two predictors using visualizations. Write down your observations.
+
+Visualization 1
+
+The grid made it very nice to see
+<CAPTION FOR VIZ 1>
+
+Visualization 2
+
+The rows separated with big enough spaces made it clear
+<CAPTION FOR VIZ 2>
+
+Data Creation 
+Use this space to create train/test data
+
+from sklearn.model_selection import train_test_split
+# X = x_train
+# y = y_train
+# X_train, X_test, y_train, y_test = train_test_split(
+#      X, y, test_size=, random_state=42)
