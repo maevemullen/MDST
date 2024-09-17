@@ -1,0 +1,100 @@
+# here is a Python list:
+
+a = [1, 2, 3, 4, 5, 6]
+
+
+# get a list containing the last 3 elements of a
+# Yes, you can just type out [4, 5, 6] but we really want to see you demonstrate you know how to use list slicing in Python
+
+a[-3:]
+
+# create a list of numbers from 1 to 20
+
+one2twenty = list(range(1,21))
+
+# now get a list with only the even numbers between 1 and 100
+# you may or may not make use of the list you made in the last cell
+
+even = []
+for i in range(100): #if you want 100 in the list then it would be 101
+    if i % 2 == 0:
+        even.append(i)
+
+ # write a function that takes two numbers as arguments
+# and returns the first number divided by the second
+
+def division(a,b):
+    return a / b
+
+# fizzbuzz
+# you will need to use both iteration and control flow 
+# go through all numbers from 1 to 30 in order
+# if the number is a multiple of 3, print fizz
+# if the number is a multiple of 5, print buzz
+# if the number is a multiple of 3 and 5, print fizzbuzz and NOTHING ELSE
+# if the number is neither a multiple of 3 nor a multiple of 5, print the number
+
+for i in range(31):
+
+    if i % 3 == 0 and i % 5 == 0:
+        print("fizzbuzz")
+    elif i % 3 == 0:
+        print("fizz")
+    elif i % 5 == 0:
+        print("buzz")
+    else:
+        print(i)
+
+  # create a dictionary that reflects the following menu pricing (taken from Ahmo's)
+# Gyro: $9 
+# Burger: $9
+# Greek Salad: $8
+# Philly Steak: $10
+
+menu_pricing = {
+    "Gyro": 9,
+    "Burger": 9,
+    "Greek Salad": 8,
+    "Philly Steak": 10
+}
+
+#Had to use GPT for help, but now I understand
+
+
+# load in the "starbucks.csv" dataset
+# refer to how we read the cereal.csv dataset in the tutorial
+import pandas as pd
+
+# Load the dataset
+df = pd.starbucks.csv('path/to/your/dataset.csv')
+
+# Display the first few rows of the dataframe
+print(df.head())
+
+# idk what this is GPT helped me
+
+# select all rows with more than and including 400 calories
+
+file wont #import
+??
+
+# select all rows whose vitamin c content is higher than the iron content
+
+??
+
+# create a new column containing the caffeine per calories of each drink
+
+??
+
+# what is the average calorie across all items?
+
+??
+
+# how many different categories of beverages are there?
+
+??
+
+# what is the average # calories for each beverage category?
+
+??
+    
